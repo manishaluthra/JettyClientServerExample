@@ -1,16 +1,6 @@
 package example.client;
 
-import java.io.ByteArrayOutputStream;
-import java.io.FileInputStream;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.ObjectInputStream;
-import java.io.ObjectOutputStream;
-
-import javax.management.ObjectInstance;
-
 import org.eclipse.jetty.client.HttpClient;
-import org.eclipse.jetty.client.HttpExchange;
 import org.eclipse.jetty.client.api.ContentResponse;
 import org.eclipse.jetty.util.Fields;
 import org.eclipse.jetty.util.Fields.Field;
@@ -22,15 +12,14 @@ import org.eclipse.jetty.util.Fields.Field;
  */
 public class HTTPclient {	
 	private HttpClient client;
-	private static HttpExchange exchange;
 	
 	public void startClient() throws Exception {
 		// Instantiate HttpClient
 		client = new HttpClient();
 		client.start();
-	
+		System.out.println("Here! started client!!");
 		Market marketObj = new Market(Settings.symbol1, Settings.bank1, Settings.price1);
-	
+		
         Field symbol = new Field("symbol", marketObj.getSymbol());
         Field bank = new Field("bank", marketObj.getBank());
         Field price = new Field("price", marketObj.getPrice().toString());
