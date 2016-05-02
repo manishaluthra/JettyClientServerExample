@@ -2,6 +2,11 @@ package example.client;
 
 import java.math.BigDecimal;
 
+/**
+ * 
+ * @author manisha
+ *
+ */
 public class Settings {
 	
 	//source bank who published the price

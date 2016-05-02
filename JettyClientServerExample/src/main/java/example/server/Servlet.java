@@ -15,6 +15,11 @@ import org.eclipse.jetty.servlet.ServletHandler;
 
 import example.client.HTTPclient;
  
+/**
+ * 
+ * @author manisha
+ *
+ */
 public class Servlet
 {
     public static void main( String[] args ) throws Exception
@@ -41,15 +46,15 @@ public class Servlet
  
         // Start things up!
         server.start();
- 
+        HTTPclient client = new HTTPclient();
+        client.startClient();
         // The use of server.join() the will make the current thread join and
         // wait until the server is done executing.
         // See
         // http://docs.oracle.com/javase/7/docs/api/java/lang/Thread.html#join()
         server.join();
-        HTTPclient client = new HTTPclient();
-        client.startClient();
-        client.stopClient();
+        
+        //client.stopClient();
         
     }
  
@@ -64,11 +69,11 @@ public class Servlet
             response.setContentType("text/html");
             response.setStatus(HttpServletResponse.SC_OK);
             response.getWriter().println("<h1>Hello from HelloServlet</h1>");
-            PrintWriter p = response.getWriter();
+            //PrintWriter p = response.getWriter();
             //ServletOutputStream out = response.getOutputStream();
             //InputStream in = new FileInputStream("tmp");
             //in.
-            p.format("%s: %s%n");
+           // p.format("%s: %s%n");
             
         }
     }

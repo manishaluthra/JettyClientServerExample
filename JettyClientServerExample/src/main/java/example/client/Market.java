@@ -2,6 +2,11 @@ package example.client;
 
 import java.math.BigDecimal;
 
+/**
+ * my sample object class to upload
+ * @author manisha
+ *
+ */
 public class Market {
 	String symbol; //for example "EUR/USD"
 	String bank;   //source bank who published the price
