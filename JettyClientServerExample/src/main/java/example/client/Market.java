@@ -1,5 +1,6 @@
 package example.client;
 
+import java.io.Serializable;
 import java.math.BigDecimal;
 
 /**
@@ -7,7 +8,11 @@ import java.math.BigDecimal;
  * @author manisha
  *
  */
-public class Market {
+public class Market implements Serializable{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	String symbol; //for example "EUR/USD"
 	String bank;   //source bank who published the price
 	BigDecimal price; //current price update

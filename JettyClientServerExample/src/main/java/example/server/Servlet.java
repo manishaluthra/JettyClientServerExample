@@ -50,11 +50,7 @@ public class Servlet
         // Start things up!
         server.start();
     	
-        // The use of server.join() the will make the current thread join and
-        // wait until the server is done executing.
-        // See
-        // http://docs.oracle.com/javase/7/docs/api/java/lang/Thread.html#join()
-        server.join();
+       
         HTTPclient client = new HTTPclient();
         try {
         	
@@ -63,7 +59,11 @@ public class Servlet
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-        
+        // The use of server.join() the will make the current thread join and
+        // wait until the server is done executing.
+        // See
+        // http://docs.oracle.com/javase/7/docs/api/java/lang/Thread.html#join()
+        server.join();
         //client.stopClient();
         
     }
@@ -71,6 +71,7 @@ public class Servlet
     @SuppressWarnings("serial")
     public static class HelloServlet extends HttpServlet
     {
+    	//private WebSocketFactory _factory;
         @Override
         protected void doGet( HttpServletRequest request,
                               HttpServletResponse response ) throws ServletException,
@@ -83,13 +84,15 @@ public class Servlet
             //ServletOutputStream out = response.getOutputStream();
             //InputStream in = new FileInputStream("tmp");
             //in.
-            response.getWriter().println(request.getParameterNames().nextElement());
-            for(Enumeration<String> e = request.getParameterNames(); e.hasMoreElements();) {
-            	String name = e.nextElement();
-            	p.format("%s: %s%n", name, request.getParameter(name));
-            	
-            	System.out.println("Here!!"+ name+ request.getParameter(name));
-            }
+            
+            
+//            response.getWriter().println(request.getParameterNames().nextElement());
+//            for(Enumeration<String> e = request.getParameterNames(); e.hasMoreElements();) {
+//            	String name = e.nextElement();
+//            	p.format("%s: %s%n", name, request.getParameter(name));
+//            	
+//            	System.out.println("Here!!"+ name+ request.getParameter(name));
+//            }
             
         }
         
@@ -97,9 +100,9 @@ public class Servlet
         protected void doPost(HttpServletRequest req, HttpServletResponse resp)
         		throws ServletException, IOException {
         	// TODO Auto-generated method stub
-        	Market marketObj = new Market(Settings.symbol1, Settings.bank1, Settings.price1);
-        	req.setAttribute("market", marketObj);
-        	super.doPost(req, resp);
+//        	Market marketObj = new Market(Settings.symbol1, Settings.bank1, Settings.price1);
+//        	req.setAttribute("market", marketObj);
+//        	super.doPost(req, resp);
         }
     }
 }

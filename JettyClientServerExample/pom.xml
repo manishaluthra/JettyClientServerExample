@@ -11,7 +11,7 @@
   <url>http://maven.apache.org</url>
 
   <properties>
-    <jettyVersion>9.3.8.v20160314</jettyVersion>
+    <jettyVersion>8.1.19.v20160209</jettyVersion>
   </properties>
 
   <dependencies>
@@ -30,6 +30,18 @@
       <artifactId>jetty-client</artifactId>
       <version>${jettyVersion}</version>
 	</dependency>
+	<dependency>
+		<groupId>org.apache.commons</groupId>
+		<artifactId>commons-lang3</artifactId>
+		<version>3.3.2</version>
+	</dependency>
+	<!-- http://mvnrepository.com/artifact/com.google.code.gson/gson -->
+	<dependency>
+	    <groupId>com.google.code.gson</groupId>
+	    <artifactId>gson</artifactId>
+	    <version>2.6.2</version>
+	</dependency>
+	
   </dependencies>
 
   <build>
